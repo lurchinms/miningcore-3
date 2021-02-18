@@ -264,15 +264,20 @@ namespace Miningcore.Blockchain.Bitcoin
             rewardToPool = new Money(BlockTemplate.CoinbaseValue, MoneyUnit.Satoshi);
 
             var tx = Transaction.Create(network);
-            //Now check if we need to pay founder fees Re PGN pre-dash fork
+            
+            // Now check if we need to pay founder fees
             if(coin.HasFounderFee)
                 rewardToPool = CreateFounderOutputs(tx,rewardToPool);
 
-
             tx.Outputs.Add(rewardToPool, poolAddressDestination);
-            //CoinbaseDevReward check for Freecash
+            
+            // CoinbaseDevReward check for Freecash
             if(coin.HasCoinbaseDevReward)
                 CreateCoinbaseDevRewardOutputs(tx);
+            
+            // Treasury check for Globaltoken
+            if(coin.HasTreasury)
+                rewardToPool = CreateTreasuryOutputs(tx,rewardToPool);
 
             return tx;
         }
@@ -632,7 +637,33 @@ namespace Miningcore.Blockchain.Bitcoin
             }
         }
 
-        #endregion // CoinbaseDevReward for FreeCash
+        #endregion // CoinbaseDevReward
+        
+        #region Treasury
+
+        protected TreasuryTemplateExtra TreasuryParams;
+
+        protected virtual Money CreateTreasuryOutputs(Transaction tx, Money reward)
+        {
+            if(TreasuryParams.Treasury != null)
+            {
+                Treasury[] CBRewards;
+                CBRewards = new[] { TreasuryParams.Treasury.ToObject<Treasury>() };
+
+                foreach(var CBReward in CBRewards)
+                {
+                    if(!string.IsNullOrEmpty(CBReward.Payee))
+                    {
+                        var payeeAddress = BitcoinUtils.AddressToDestination(CBReward.Payee, network);
+                        var payeeReward = CBReward.Amount;
+                        tx.Outputs.Add(payeeReward, payeeAddress);
+                    }
+                }
+            }
+            return reward;
+        }
+
+        #endregion // Treasury
             
         #region API-Surface
 
@@ -694,6 +725,9 @@ namespace Miningcore.Blockchain.Bitcoin
 
             if(coin.HasCoinbaseDevReward)
                 CoinbaseDevRewardParams = BlockTemplate.Extra.SafeExtensionDataAs<CoinbaseDevRewardTemplateExtra>();
+            
+            if(coin.HasTreasury)
+                TreasuryParams = BlockTemplate.Extra.SafeExtensionDataAs<TreasuryTemplateExtra>();
 
             if(coin.HasPayee)
                 payeeParameters = BlockTemplate.Extra.SafeExtensionDataAs<PayeeBlockTemplateExtra>();
