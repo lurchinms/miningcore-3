@@ -268,16 +268,16 @@ namespace Miningcore.Blockchain.Bitcoin
             // Now check if we need to pay founder fees
             if(coin.HasFounderFee)
                 rewardToPool = CreateFounderOutputs(tx,rewardToPool);
+            
+            // Treasury check for Globaltoken
+            if(coin.HasTreasury)
+                rewardToPool = CreateTreasuryOutputs(txrewardToPool);
 
             tx.Outputs.Add(rewardToPool, poolAddressDestination);
             
             // CoinbaseDevReward check for Freecash
             if(coin.HasCoinbaseDevReward)
                 CreateCoinbaseDevRewardOutputs(tx);
-            
-            // Treasury check for Globaltoken
-            if(coin.HasTreasury)
-                rewardToPool = CreateTreasuryOutputs(tx);
 
             return tx;
         }
