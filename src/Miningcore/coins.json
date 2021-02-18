@@ -331,7 +331,7 @@
             "hash": "reverse",
             "args": [ { "hash": "sha256d" } ]
         },
-        "hasCoinbasePayload" : true,
+        "hasCoinbasePayload": true,
         "explorerBlockLink": "https://devault.llama.network/block/$height$",
         "explorerTxLink": "https://devault.llama.network/tx/{0}",
         "explorerAccountLink": "https://devault.llama.network/address/{0}"
@@ -596,7 +596,7 @@
          "hash": "reverse",
          "args": [ { "hash": "sha256d" } ]
          },
-        "hasCoinbaseDevReward":true,
+        "hasCoinbaseDevReward": true,
         "explorerBlockLink": "https://freecash.info/block?height=$height$",
         "explorerTxLink": "https://freecash.info/transaction?hash={0}",
         "explorerAccountLink": "https://freecash.info/address?address={0}"
@@ -635,6 +635,7 @@
             "args": [ { "hash": "sha256d" } ]
         },
         "hasMasterNodes": true,
+        "hasTreasury": true,
         "explorerBlockLink": "https://bchain.info/GLT/block/$height$",
         "explorerTxLink": "https://bchain.info/GLT/tx/{0}",
         "explorerAccountLink": "https://bchain.info/GLT/addr/{0}"
@@ -1055,8 +1056,8 @@
                 }
             ]
         },
-        "shareMultiplier": 65536,
         "hasMasterNodes": true,
+        "shareMultiplier": 65536,
         "explorerBlockLink": "https://explorer.pyrk.org/blockheight/$height$",
         "explorerTxLink": "https://explorer.pyrk.org/tx/{0}",
         "explorerAccountLink": "https://explorer.pyrk.org/address/{0}"
