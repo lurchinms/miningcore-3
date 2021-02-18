@@ -10,7 +10,7 @@ namespace Miningcore.Blockchain.Bitcoin.DaemonResponses
     {
         public string Payee        { get; set; }
         public string ScriptPubkey { get; set; }
-        public long Amount         { get; set; }
+        public long   Amount       { get; set; }
     }
 
     public class TreasuryTemplateExtra
