@@ -271,7 +271,7 @@ namespace Miningcore.Blockchain.Bitcoin
             
             // Treasury check for Globaltoken
             if(coin.HasTreasury)
-                rewardToPool = CreateTreasuryOutputs(txrewardToPool);
+                rewardToPool = CreateTreasuryOutputs(tx,rewardToPool);
 
             tx.Outputs.Add(rewardToPool, poolAddressDestination);
             
