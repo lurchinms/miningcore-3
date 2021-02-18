@@ -502,7 +502,7 @@ namespace Miningcore.Blockchain.Bitcoin
                     {
                         var payeeAddress = BitcoinUtils.AddressToDestination(masterNode.Payee, network);
                         var payeeReward = masterNode.Amount;
-                        if(!(poolConfig.Template.Symbol == "IDX" || poolConfig.Template.Symbol == "VGC" || poolConfig.Template.Symbol == "SHROUD" || poolConfig.Template.Symbol == "XZC")){
+                        if(!(poolConfig.Template.Symbol == "IDX" || poolConfig.Template.Symbol == "VGC" || poolConfig.Template.Symbol == "SHROUD" || poolConfig.Template.Symbol == "GLT" || poolConfig.Template.Symbol == "XZC")){
                                 reward -= payeeReward;
                                 rewardToPool -= payeeReward;
                         }
@@ -529,7 +529,7 @@ namespace Miningcore.Blockchain.Bitcoin
             {
                 var payeeAddress = BitcoinUtils.AddressToDestination(masterNodeParameters.Payee, network);
                 var payeeReward = masterNodeParameters.PayeeAmount;
-                if(!(poolConfig.Template.Symbol == "IDX" || poolConfig.Template.Symbol == "VGC" || poolConfig.Template.Symbol == "SHROUD" || poolConfig.Template.Symbol == "XZC")){
+                if(!(poolConfig.Template.Symbol == "IDX" || poolConfig.Template.Symbol == "VGC" || poolConfig.Template.Symbol == "SHROUD" || poolConfig.Template.Symbol == "GLT" || poolConfig.Template.Symbol == "XZC")){
                     reward -= payeeReward;
                     rewardToPool -= payeeReward;
                 }
