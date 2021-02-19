@@ -251,6 +251,24 @@
         "explorerTxLink": "http://explorer.btcd.io/#/TX?TX={0}",
         "explorerAccountLink": "http://explorer.btcd.io/#/address?address={0}"
     },
+    "bitcoinsv": {
+        "name": "BitcoinSV",
+        "symbol": "BSV",
+        "family": "bitcoin",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [ { "hash": "sha256d" } ]
+        },
+        "explorerBlockLink": "https://bsv.tokenview.com/block/$height$",
+        "explorerTxLink": "https://bsv.tokenview.com/tx/{0}",
+        "explorerAccountLink": "https://bsv.tokenview.com/address/{0}"
+    },
     "browncoin": {
         "name": "Browncoin",
         "symbol": "BRWN",
