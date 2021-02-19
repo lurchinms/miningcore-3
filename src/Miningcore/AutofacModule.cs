@@ -138,8 +138,8 @@ namespace Miningcore
                 .Keyed<IPayoutScheme>(PayoutScheme.PPLNS)
                 .SingleInstance();
 
-            builder.RegisterType<PPSPaymentScheme>()
-                .Keyed<IPayoutScheme>(PayoutScheme.PPS)
+            builder.RegisterType<PROPPaymentScheme>()
+                .Keyed<IPayoutScheme>(PayoutScheme.PROP)
                 .SingleInstance();
 
             builder.RegisterType<SOLOPaymentScheme>()
