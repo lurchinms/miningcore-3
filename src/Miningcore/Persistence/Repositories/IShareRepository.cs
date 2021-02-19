@@ -37,6 +37,8 @@ namespace Miningcore.Persistence.Repositories
 
         Task<long> CountSharesBeforeCreatedAsync(IDbConnection con, IDbTransaction tx, string poolId, DateTime before);
         Task DeleteSharesBeforeCreatedAsync(IDbConnection con, IDbTransaction tx, string poolId, DateTime before);
+        Task<long> CountSharesPropBeforeCreatedAsync(IDbConnection con, IDbTransaction tx, string poolId, DateTime before);
+        Task DeleteSharesPropBeforeCreatedAsync(IDbConnection con, IDbTransaction tx, string poolId, DateTime before);
         Task<long> CountSharesSoloBeforeCreatedAsync(IDbConnection con, IDbTransaction tx, string poolId, string miner, DateTime before);
         Task DeleteSharesSoloBeforeCreatedAsync(IDbConnection con, IDbTransaction tx, string poolId, string miner, DateTime before);
 
