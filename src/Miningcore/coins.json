@@ -1078,6 +1078,7 @@
                 }
             ]
         },
+        "hasMasterNodes": true,
         "shareMultiplier": 65536,
         "explorerBlockLink": "https://explorer.miningpower.net/index.php?block_hash=$hash$",
         "explorerTxLink": "https://explorer.miningpower.net/index.php?transaction={0}",
