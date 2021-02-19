@@ -1243,6 +1243,25 @@
         "explorerTxLink": "http://explorer.swippcoin.com/tx/{0}",
         "explorerAccountLink": "http://explorer.swippcoin.com/address/{0}"
     },
+    "terracoin": {
+        "name": "Terracoin",
+        "canonicalName": "Auroracoin",
+        "symbol": "TRC",
+        "family": "bitcoin",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [ { "hash": "sha256d" } ]
+        },
+        "explorerBlockLink": "http://insight.terracoin.io/block/$hash$",
+        "explorerTxLink": "http://insight.terracoin.io/tx/{0}",
+        "explorerAccountLink": "http://insight.terracoin.io/address/{0}"
+    },
     "titcoin": {
        "name": "Titcoin",
        "symbol": "TIT",
