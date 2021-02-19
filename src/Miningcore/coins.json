@@ -1054,6 +1054,35 @@
         "explorerTxLink": "http://explorer.pigeoncoin.org/tx/{0}",
         "explorerAccountLink": "http://explorer.pigeoncoin.org/address/{0}"
     },
+    "profithunters": {
+        "name": "Profit Hunters",
+        "symbol": "PHC",
+        "family": "bitcoin",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "scrypt",
+            "args": [ 1024, 1 ]
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [ { "hash": "sha256d" } ]
+        },
+        "posBlockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "scrypt",
+                    "args": [ 1024, 1 ]
+                }
+            ]
+        },
+        "shareMultiplier": 65536,
+        "explorerBlockLink": "https://explorer.miningpower.net/index.php?block_hash=$hash$",
+        "explorerTxLink": "https://explorer.miningpower.net/index.php?transaction={0}",
+        "explorerAccountLink": "https://explorer.miningpower.net/index.php?wallet={0}"
+    },
     "pyrk-sha256": {
         "name": "Pyrk-Sha256",
         "canonicalName": "Pyrk",
