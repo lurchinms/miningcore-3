@@ -39,12 +39,12 @@ using Contract = Miningcore.Contracts.Contract;
 namespace Miningcore.Payments.PaymentSchemes
 {
     /// <summary>
-    /// PPS payout scheme implementation
+    /// PROP payout scheme implementation
     /// </summary>
     // ReSharper disable once InconsistentNaming
-    public class PPSPaymentScheme : IPayoutScheme
+    public class PROPPaymentScheme : IPayoutScheme
     {
-     public PPSPaymentScheme(IConnectionFactory cf,
+     public PROPPaymentScheme(IConnectionFactory cf,
             IShareRepository shareRepo,
             IBlockRepository blockRepo,
             IBalanceRepository balanceRepo)
@@ -66,7 +66,7 @@ namespace Miningcore.Payments.PaymentSchemes
         private readonly IBlockRepository blockRepo;
         private readonly IConnectionFactory cf;
         private readonly IShareRepository shareRepo;
-        private static readonly ILogger logger = LogManager.GetLogger("PPS Payment", typeof(PPSPaymentScheme));
+        private static readonly ILogger logger = LogManager.GetLogger("PROP Payment", typeof(PROPPaymentScheme));
 
         private const int RetryCount = 4;
         private IAsyncPolicy shareReadFaultPolicy;
@@ -124,7 +124,7 @@ namespace Miningcore.Payments.PaymentSchemes
         private async Task LogDiscardedSharesAsync(PoolConfig poolConfig, Block block, DateTime value)
         {
             var before = value;
-            var pageSize = 50000;
+            var pageSize = 100000;
             var currentPage = 0;
             var shares = new Dictionary<string, double>();
 
@@ -175,7 +175,7 @@ namespace Miningcore.Payments.PaymentSchemes
             var done = false;
             var before = block.Created;
             var inclusive = true;
-            var pageSize = 50000;
+            var pageSize = 100000;
             var currentPage = 0;
             var accumulatedScore = 0.0m;
             var blockRewardRemaining = blockReward;
@@ -214,9 +214,32 @@ namespace Miningcore.Payments.PaymentSchemes
                     if (shareCutOffDate == null || share.Created > shareCutOffDate)
 
                         shareCutOffDate = share.Created;
+                }
 
+                if (accumulatedScore > 0)
+                {
+                    var rewardPerScorePoint = blockReward / accumulatedScore;
+
+                    // build rewards for all addresses that contributed to the round
+                    foreach (var address in scores.Select(x => x.Key).Distinct())
+                    {
+                      // loop all scores for the current address
+                      foreach (var score in scores.Where(x => x.Key == address))
+                    {
+                    var reward = score.Value * rewardPerScorePoint;
+                    if (reward > 0)
+                    {
+                      // accumulate miner reward
+                      if (!rewards.ContainsKey(address))
+                         rewards[address] = reward;
+                      else
+                         rewards[address] += reward;
+                      }                            
+                      blockRewardRemaining -= reward;
                     }
-
+                  }
+                }
+                
                 if (page.Length < pageSize)
                 {
                     done = true;
@@ -226,31 +249,7 @@ namespace Miningcore.Payments.PaymentSchemes
                 before = page[page.Length - 1].Created;
                 done = page.Length <= 0;
             }
-
-            if (accumulatedScore > 0)
-            {
-                var rewardPerScorePoint = blockReward / accumulatedScore;
-
-                // build rewards for all addresses that contributed to the round
-                foreach (var address in scores.Select(x => x.Key).Distinct())
-                {
-                    // loop all scores for the current address
-                    foreach (var score in scores.Where(x => x.Key == address))
-                    {
-                        var reward = score.Value * rewardPerScorePoint;
-                        if (reward > 0)
-                        {
-                            // accumulate miner reward
-                            if (!rewards.ContainsKey(address))
-                                rewards[address] = reward;
-                            else
-                                rewards[address] += reward;
-                        }                            
-                        blockRewardRemaining -= reward;
-                    }
-                }
-            }
-                
+        
             // this should never happen
             if (blockRewardRemaining <= 0 && !done)
                 throw new OverflowException("blockRewardRemaining < 0");
