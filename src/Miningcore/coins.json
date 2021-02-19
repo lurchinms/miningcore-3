@@ -551,6 +551,31 @@
         "explorerTxLink": "https://explorer.fanaticoscriptos.com/tx/{0}",
         "explorerAccountLink": "https://explorer.fanaticoscriptos.com/address/{0}"
     },
+    "feathercoin": {
+        "name": "Feathercoin",
+        "symbol": "FTC",
+        "family": "bitcoin",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "neoscrypt",
+            "args": [ 0 ]
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "neoscrypt",
+                    "args": [ 0 ]
+                }
+            ]
+        },
+        "shareMultiplier": 65536,
+        "explorerBlockLink": "https://chainz.cryptoid.info/ftc/block.dws?$height$.htm",
+        "explorerTxLink": "https://chainz.cryptoid.info/ftc/tx.dws?{0}.htm",
+        "explorerAccountLink": "https://chainz.cryptoid.info/ftc/address.dws?{0}.htm"
+    },
     "flo": {
         "name": "Florin",
         "symbol": "FLO",
