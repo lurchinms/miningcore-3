@@ -82,7 +82,6 @@ namespace Miningcore.Payments.PaymentSchemes
             IPayoutHandler payoutHandler, Block block, decimal blockReward)
         {
             var payoutConfig = poolConfig.PaymentProcessing.PayoutSchemeConfig;
-            var window = payoutConfig?.ToObject<Config>()?.Factor ?? 2.0m;
             var shares = new Dictionary<string, double>();
             var rewards = new Dictionary<string, decimal>();
             var shareCutOffDate = await CalculateRewardsAsync(poolConfig, block, blockReward, shares, rewards);
