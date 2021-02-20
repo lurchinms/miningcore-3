@@ -664,7 +664,7 @@
         "explorerAccountLink": "http://explorer.geekcash.org/address/{0}"
     },
     "globaltoken-sha256": {
-        "name": "Globaltoken-Sha256",
+        "name": "GLT-Sha256",
         "canonicalName": "Globaltoken",
         "symbol": "GLT",
         "family": "bitcoin",
@@ -685,7 +685,7 @@
         "explorerAccountLink": "https://explorer.globaltoken.org/address/{0}"
     },
     "globaltoken-scrypt": {
-        "name": "Globaltoken-Scrypt",
+        "name": "GLT-Scrypt",
         "canonicalName": "Globaltoken",
         "symbol": "GLT",
         "family": "bitcoin",
