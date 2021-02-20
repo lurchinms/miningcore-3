@@ -1278,7 +1278,7 @@
         "explorerAccountLink": "https://chainz.cryptoid.info/spk/address.dws?{0}.htm"
     },
     "sugarchain": {
-        "name": "Sugarchain",
+        "name": "SugarChain",
         "symbol": "SUGAR",
         "family": "bitcoin",
         "coinbaseHasher": {
@@ -1289,9 +1289,9 @@
         },
         "blockHasher": {
             "hash": "reverse",
-            "args": [ { "hash": "sha256d" } ]
+            "args": [ { "hash": "yespower_sugar" } ]
         },
-        "shareMultipler":4194304,
+        "shareMultipler": 4194304,
         "explorerBlockLink": "https://1explorer.sugarchain.org/block/$hash$",
         "explorerTxLink": "https://1explorer.sugarchain.org/tx/{0}",
         "explorerAccountLink": "https://1explorer.sugarchain.org/address/{0}"
@@ -1333,6 +1333,25 @@
         "explorerBlockLink": "http://insight.terracoin.io/block/$hash$",
         "explorerTxLink": "http://insight.terracoin.io/tx/{0}",
         "explorerAccountLink": "http://insight.terracoin.io/address/{0}"
+    },
+    "tidecoin": {
+        "name": "Tidecoin",
+        "symbol": "TDC",
+        "family": "bitcoin",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "yespower_tide"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [ { "hash": "yespower_tide" } ]
+        },
+        "shareMultipler": 3145728,
+        "explorerBlockLink": "http://explorer.tidecoin.org/block/$hash$",
+        "explorerTxLink": "http://explorer.tidecoin.org/tx/{0}",
+        "explorerAccountLink": "http://explorer.tidecoin.org/address/{0}"
     },
     "titcoin": {
        "name": "Titcoin",
