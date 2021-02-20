@@ -1289,7 +1289,7 @@
         },
         "blockHasher": {
             "hash": "reverse",
-            "args": [ { "hash": "yespower_sugar" } ]
+            "args": [ { "hash": "sha256d" } ]
         },
         "shareMultiplier": 4194304,
         "explorerBlockLink": "https://1explorer.sugarchain.org/block/$hash$",
@@ -1346,7 +1346,7 @@
         },
         "blockHasher": {
             "hash": "reverse",
-            "args": [ { "hash": "yespower_tide" } ]
+            "args": [ { "hash": "sha256d" } ]
         },
         "shareMultiplier": 3145728,
         "explorerBlockLink": "http://explorer.tidecoin.org/block/$hash$",
