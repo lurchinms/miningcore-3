@@ -663,8 +663,9 @@
         "explorerTxLink": "http://explorer.geekcash.org/tx/{0}",
         "explorerAccountLink": "http://explorer.geekcash.org/address/{0}"
     },
-    "globaltoken": {
-        "name": "Globaltoken",
+    "globaltoken-sha256": {
+        "name": "Globaltoken-Sha256",
+        "canonicalName": "Globaltoken",
         "symbol": "GLT",
         "family": "bitcoin",
         "coinbaseHasher": {
@@ -679,9 +680,32 @@
         },
         "hasMasterNodes": true,
         "hasTreasury": true,
-        "explorerBlockLink": "https://bchain.info/GLT/block/$height$",
-        "explorerTxLink": "https://bchain.info/GLT/tx/{0}",
-        "explorerAccountLink": "https://bchain.info/GLT/addr/{0}"
+        "explorerBlockLink": "https://explorer.globaltoken.org/block/$hash$",
+        "explorerTxLink": "https://explorer.globaltoken.org/tx/{0}",
+        "explorerAccountLink": "https://explorer.globaltoken.org/address/{0}"
+    },
+    "globaltoken-scrypt": {
+        "name": "Globaltoken-Scrypt",
+        "canonicalName": "Globaltoken",
+        "symbol": "GLT",
+        "family": "bitcoin",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "scrypt",
+            "args": [ 1024, 1 ]
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [ { "hash": "sha256d" } ]
+        },
+        "hasMasterNodes": true,
+        "hasTreasury": true,
+        "shareMultiplier": 65536,
+        "explorerBlockLink": "https://explorer.globaltoken.org/block/$hash$",
+        "explorerTxLink": "https://explorer.globaltoken.org/tx/{0}",
+        "explorerAccountLink": "https://explorer.globaltoken.org/address/{0}"
     },
     "goldcash": {
         "name": "Gold Cash",
