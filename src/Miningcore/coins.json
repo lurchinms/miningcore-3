@@ -1229,7 +1229,7 @@
     },
     "shroud": {
         "name": "ShroudX",
-        "symbol": "SHROUD",
+        "symbol": "SHRX",
         "family": "bitcoin",
         "coinbaseHasher": {
             "hash": "sha256d"
