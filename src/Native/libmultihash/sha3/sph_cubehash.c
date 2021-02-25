@@ -33,8 +33,8 @@
 #include <stddef.h>
 #include <string.h>
 #include <limits.h>
-#include "sph_cubehash.h"
 
+#include "sph_cubehash.h"
 #ifdef __cplusplus
 extern "C"{
 #endif

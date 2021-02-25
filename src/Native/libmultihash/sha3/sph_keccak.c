@@ -32,6 +32,7 @@
 
 #include <stddef.h>
 #include <string.h>
+
 #include "sph_keccak.h"
 
 #ifdef __cplusplus

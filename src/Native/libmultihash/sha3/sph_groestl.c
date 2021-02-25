@@ -32,6 +32,7 @@
 
 #include <stddef.h>
 #include <string.h>
+
 #include "sph_groestl.h"
 
 #ifdef __cplusplus
