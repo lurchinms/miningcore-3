@@ -44,6 +44,9 @@
     <ClInclude Include="geek.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="gost.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="groestl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -60,6 +63,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="nist5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="phi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="phi2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="phi5.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="quark.h">
@@ -388,6 +400,9 @@
     <ClCompile Include="geek.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gost.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="groestl.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -404,6 +419,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="nist5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="phi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="phi2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="phi5.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="quark.c">
