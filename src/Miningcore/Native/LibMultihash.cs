@@ -193,6 +193,15 @@ namespace Miningcore.Native
         
         [DllImport("libmultihash", EntryPoint = "sha256csm_export", CallingConvention = CallingConvention.Cdecl)]
         public static extern int sha256csm(byte* input, void* output, uint inputLength);
+        
+        [DllImport("libmultihash", EntryPoint = "phi_export", CallingConvention = CallingConvention.Cdecl)]
+        public static extern int phi(byte* input, void* output, uint inputLength);
+        
+        [DllImport("libmultihash", EntryPoint = "phi2_export", CallingConvention = CallingConvention.Cdecl)]
+        public static extern int phi2(byte* input, void* output, uint inputLength);
+        
+        [DllImport("libmultihash", EntryPoint = "phi5_export", CallingConvention = CallingConvention.Cdecl)]
+        public static extern int phi5(byte* input, void* output, uint inputLength);
 
         [DllImport("libmultihash", EntryPoint = "equihash_verify_200_9_export", CallingConvention = CallingConvention.Cdecl)]
         public static extern bool equihash_verify_200_9(byte* header, int headerLength, byte* solution, int solutionLength, string personalization);
