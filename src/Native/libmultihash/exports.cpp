@@ -68,6 +68,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include "yescrypt.h"
 #include "yespower/yespower.h"
 #include "sha256csm.h"
+#include "phi.h"
+#include "phi2.h"
+#include "phi5.h"
 
 extern "C" bool ethash_get_default_dirname(char* strbuf, size_t buffsize);
 
@@ -357,6 +360,21 @@ extern "C" MODULE_API void cpupower_export(const char* input, char* output, uint
 extern "C" MODULE_API void sha256csm_export(const char* input, char* output, uint32_t input_len)
 {
 	sha256csm_hash(input, output, input_len);
+}
+
+extern "C" MODULE_API void phi_export(const char* input, char* output, uint32_t input_len)
+{
+	phi_hash(input, output, input_len);
+}
+
+extern "C" MODULE_API void phi2_export(const char* input, char* output, uint32_t input_len)
+{
+	phi2_hash(input, output, input_len);
+}
+
+extern "C" MODULE_API void phi5_export(const char* input, char* output, uint32_t input_len)
+{
+	phi5_hash(input, output, input_len);
 }
 
 extern "C" MODULE_API bool equihash_verify_200_9_export(const char* header, int header_length, const char* solution, int solution_length, const char *personalization)
