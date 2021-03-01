@@ -7,7 +7,7 @@
 #include "sha3/sph_jh.h"
 #include "sha3/sph_echo.h"
 #include "sha3/sph_skein.h"
-#include "gost.h"
+#include "sha3/sph_gost.h"
 #include "Lyra2.h"
 #include "common.h"
 
