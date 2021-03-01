@@ -10,7 +10,7 @@
 #include "sha3/sph_cubehash.h"
 #include "sha3/sph_echo.h"
 #include "sha3/sph_fugue.h"
-#include "gost.h"
+#include "sha3/sph_gost.h"
 #include "common.h"
 
 void phi5_hash(const char* input, char* output, uint32_t len)
