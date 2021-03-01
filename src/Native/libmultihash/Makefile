@@ -5,9 +5,9 @@ LDFLAGS = -shared
 LDLIBS = -lsodium
 TARGET  = libmultihash.so
 
-OBJECTS = KeccakP-800-reference.o balloon.o bcrypt.o blake.o blake2s.o c11.o dcrypt.o exports.o fresh.o fugue.o geek.o groestl.o \
+OBJECTS = balloon.o bcrypt.o blake.o blake2s.o c11.o dcrypt.o exports.o fresh.o fugue.o geek.o groestl.o \
           hefty1.o jh.o keccak.o lane.o Lyra2.o Lyra2-z.o lyra2re.o lyra2v2.o lyra2v3.o lyra2z.o lyra2z330.o lyra2vc0ban.o \
-	      neoscrypt.o nist5.o odocrypt.o phi.o phi2.o phi5.o quark.o qubit.o \
+	      neoscrypt.o nist5.o odocrypt.o phi.o phi2.o phi5.o quark.o qubit.o KeccakP-800-reference.o \
 	      s3.o scryptn.o sha256.o sha256csm.o sha256_Y.o shavite3.o skein.o Sponge.o \
 	      x11.o x13.o x15.o x17.o x16r.o x16rv2.o x16s.o x21s.o x25x.o yescrypt.o yescrypt-opt.o \
           sha3/SWIFFTX.o sha3/aes_helper.o sha3/extra.o sha3/hamsi_helper.o sha3/haval_helper.o sha3/md_helper.o sha3/sph_blake.o \
