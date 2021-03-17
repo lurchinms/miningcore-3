@@ -1315,6 +1315,24 @@
         "explorerTxLink": "http://explorer.swippcoin.com/tx/{0}",
         "explorerAccountLink": "http://explorer.swippcoin.com/address/{0}"
     },
+    "syscoin": {
+        "name": "Syscoin",
+        "symbol": "SYS",
+        "family": "bitcoin",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [ { "hash": "sha256d" } ]
+        },
+        "explorerBlockLink": "https://chainz.cryptoid.info/sys/block.dws?$height$.htm",
+         "explorerTxLink": "https://chainz.cryptoid.info/sys/tx.dws?{0}.htm",
+         "explorerAccountLink": "https://chainz.cryptoid.info/sys/address.dws?{0}.htm"
+    },
     "terracoin": {
         "name": "Terracoin",
         "canonicalName": "Auroracoin",
