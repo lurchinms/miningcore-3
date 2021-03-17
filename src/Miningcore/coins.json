@@ -1179,6 +1179,118 @@
         "explorerTxLink": "https://explorer.pyrk.org/tx/{0}",
         "explorerAccountLink": "https://explorer.pyrk.org/address/{0}"
     },
+    "quebecoin-sha256": {
+        "name": "Quebecoin-Sha256",
+        "canonicalName": "Quebecoin",
+        "symbol": "QBC",
+        "family": "bitcoin",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [ { "hash": "sha256d" } ]
+        },
+        "explorerBlockLink": "https://www.blockseek.io/qbc/block/$hash$",
+        "explorerTxLink": "https://www.blockseek.io/qbc/tx/{0}",
+        "explorerAccountLink": "https://www.blockseek.io/qbc/address/{0}"
+    },
+    "quebecoin-scrypt": {
+        "name": "Quebecoin-Scrypt",
+        "canonicalName": "Quebecoin",
+        "symbol": "QBC",
+        "family": "bitcoin",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "scrypt",
+            "args": [ 1024, 1 ]
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [ { "hash": "sha256d" } ]
+        },
+        "posBlockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "scrypt",
+                    "args": [ 1024, 1 ]
+                }
+            ]
+        },
+        "shareMultiplier": 65536,
+        "explorerBlockLink": "https://www.blockseek.io/qbc/block/$hash$",
+        "explorerTxLink": "https://www.blockseek.io/qbc/tx/{0}",
+        "explorerAccountLink": "https://www.blockseek.io/qbc/address/{0}"
+    },
+    "quebecoin-skein": {
+        "name": "Quebecoin-Skein",
+        "canonicalName": "Quebecoin",
+        "symbol": "QBC",
+        "family": "bitcoin",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "skein"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [ { "hash": "sha256d" } ]
+        },
+        "explorerBlockLink": "https://www.blockseek.io/qbc/block/$hash$",
+        "explorerTxLink": "https://www.blockseek.io/qbc/tx/{0}",
+        "explorerAccountLink": "https://www.blockseek.io/qbc/address/{0}"
+    },
+    "quebecoin-qubit": {
+        "name": "Quebecoin-Qubit",
+        "canonicalName": "Quebecoin",
+        "symbol": "QBC",
+        "family": "bitcoin",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "qubit"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [ { "hash": "sha256d" } ]
+        },
+        "explorerBlockLink": "https://www.blockseek.io/qbc/block/$hash$",
+        "explorerTxLink": "https://www.blockseek.io/qbc/tx/{0}",
+        "explorerAccountLink": "https://www.blockseek.io/qbc/address/{0}"
+    },
+    "quebecoin-groestl": {
+        "name": "Quebecoin-Groestl",
+        "canonicalName": "Quebecoin",
+        "symbol": "QBC",
+        "family": "bitcoin",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "groestlmyriad"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "scrypt",
+                    "args": [ 1024, 1 ]
+                }
+            ]
+        },
+        "shareMultiplier": 65536,
+        "explorerBlockLink": "https://www.blockseek.io/qbc/block/$hash$",
+        "explorerTxLink": "https://www.blockseek.io/qbc/tx/{0}",
+        "explorerAccountLink": "https://www.blockseek.io/qbc/address/{0}"
+    },
     "rosecoin": {
         "name": "Rosecoin",
         "symbol": "ROC",
